@@ -1,9 +1,46 @@
 = math_calculator
 
-Description goes here.
+Math calculator evaluates expressions containg terms supported bt the Ruby's Math module.
+Although you could do the same with eval, MathCalulator makes sure that only valid Math
+functions are evaluated.
+
+== Install
+
+Install math_calculator like any other ruby gem:
+
+    gem install math_calculator
+
+== Overview of usage
+
+  math_calculator accepts a string containg the expression to be evaluated
+  and returns the value of the expression. It optionally accepts a hash of variable
+  values used in the expression. The options key must be a symbol representing
+  a variable, and the options value must be numeric, which would be used as the
+  value of the variable to evaluate the expression.
+
+== Commands and Usage
+
+Available Command:
+
+  str = "2+4"
+  MathCalculator.calculate(str)  # 6
+
+  MathCalculator.calculate('(x+y)*2', :x => 2, :y => 4)  # 12
+
+  str = "x+y"
+  options = {:x => 2, :y => 4}
+  MathCalculator.calculate(str, options)  # 6
+
+
+== Issues, Suggestions
+
+* https://github.com/aksharma/math_calculator/issues/
+* or email me directly at (sharma.rubyonrails)
+*     this address        (    @             )
+*                         (sharmail_dot_com  )
 
 == Contributing to math_calculator
- 
+
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it.
 * Fork the project.
@@ -14,6 +51,5 @@ Description goes here.
 
 == Copyright
 
-Copyright (c) 2012 Anil Sharma. See LICENSE.txt for
-further details.
+Copyright (c) 2012 Anil Sharma. See LICENSE for further details.
 
